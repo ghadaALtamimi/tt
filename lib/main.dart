@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp()); //دائم تنكتب وداخلها ميثود مشروعي 
+  runApp(const MyApp()); //دائم تنكتب وداخلها ميثود مشروعي يستقبل اوبجكت من نوع ويدجت
 }
-
-class MyApp extends StatelessWidget {
+// appBarالبار الي فوق يسمى
+/*
+1- StatelessWidget او StatefulWidget انشئ كلاس واخليه يرث من 
+2- 
+3-
+*/ 
+class MyApp extends StatelessWidget {// يعني ويدجت (ويدجت هو اي شي يرسم على الشاشه )بدون ستيت StatelessWidgetيرث من 
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {// override دايم يسوى عليها كذا تغير الواجهة
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -29,7 +34,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget {//يعني ستيت بويدجت 
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -69,16 +74,16 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
+    return Scaffold(//الي يحمل الصفحه بالكامل 
+      appBar: AppBar( //يعرض الشريط الي فوق 
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text(widget.title), //استقبلتها من الكلاس الي استدعاها 
       ),
-      body: Center(
+      body: Center(//يكون كل شي في النص  لاني حاطة وسط البدي
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
+        child: Column(// يكون عندنا عامود داخلها تشيلدرن
           // Column is also a layout widget. It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
           // children horizontally, and tries to be as tall as its parent.
@@ -93,7 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,// عشان احدد وين موقعه وسط فوق تحت يعني شكل عامودي لانه وسط الكالوم
+
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
@@ -102,11 +108,11 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-          ],
+          ],//الي ينعرض في النص
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _incrementCounter,//يتم تنفيذها عند الضغط 
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
